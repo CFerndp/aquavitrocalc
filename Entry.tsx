@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import { Tab, Text, TabView } from "@rneui/themed";
 import i18n from "./i18n";
 
-export default () => {
-  const [index, setIndex] = React.useState(0);
+import Npk from "./pages/Npk";
+import Main from "./pages/Main";
+import Ghkh from "./pages/Ghkh";
+<ion-icon name="outline"></ion-icon>
 
+export default () => {
+  const [index, setIndex] = useState(1);
   return (
     <>
       <Tab
@@ -17,31 +21,31 @@ export default () => {
         variant="primary"
       >
         <Tab.Item
-          title="Recent"
+          title="NPK"
           titleStyle={{ fontSize: 12 }}
-          icon={{ name: "timer", type: "ionicon", color: "white" }}
+          icon={{ name: "return-down-back-outline", type: "ionicon", color: "white" }}
         />
         <Tab.Item
-          title="favorite"
+          title="Hierro y Micronutrientes"
           titleStyle={{ fontSize: 12 }}
-          icon={{ name: "heart", type: "ionicon", color: "white" }}
+          icon={{ name: "remove-outline", type: "ionicon", color: "white" }}
         />
         <Tab.Item
-          title="cart"
+          title="GH y KH"
           titleStyle={{ fontSize: 12 }}
-          icon={{ name: "cart", type: "ionicon", color: "white" }}
+          icon={{ name: "return-down-forward-outline", type: "ionicon", color: "white" }}
         />
       </Tab>
 
       <TabView value={index} onChange={setIndex} animationType="spring">
-        <TabView.Item style={{ backgroundColor: "red", width: "100%" }}>
-          <Text h1>Recent</Text>
+        <TabView.Item style={{ width: "100%" }}>
+          <Npk />
         </TabView.Item>
-        <TabView.Item style={{ backgroundColor: "blue", width: "100%" }}>
-          <Text h1>Favorite</Text>
+        <TabView.Item style={{  width: "100%" }}>
+          <Main />
         </TabView.Item>
-        <TabView.Item style={{ backgroundColor: "green", width: "100%" }}>
-          <Text h1>Cart</Text>
+        <TabView.Item style={{  width: "100%" }}>
+          <Ghkh />
         </TabView.Item>
       </TabView>
     </>
