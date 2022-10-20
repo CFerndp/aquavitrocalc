@@ -5,7 +5,6 @@ import i18n from "./i18n";
 import Npk from "./pages/Npk";
 import Main from "./pages/Main";
 import Ghkh from "./pages/Ghkh";
-<ion-icon name="outline"></ion-icon>
 
 export default () => {
   const [index, setIndex] = useState(1);
