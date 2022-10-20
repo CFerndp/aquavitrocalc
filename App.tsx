@@ -1,22 +1,13 @@
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
-import i18n from "./i18n";
+import {  ThemeProvider } from '@rneui/themed';
+import Entry from "./Entry";
 
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>{i18n.t("hello")}</Text>
-      <StatusBar style="auto" />
-    </View>
+    <ThemeProvider>    
+      <Entry />
+      <StatusBar style="auto" />    
+    </ThemeProvider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});
